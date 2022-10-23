@@ -15,7 +15,8 @@ public class CheckSign {
                 check1++;
             }
             if (symbol.equals("*") || symbol.equals("/") || symbol.equals("+") || symbol.equals("-")) {
-                check2++;
+                if(!symbol.equals("-"))check2++;
+                else if(i>=1 && Character.isDigit(str.charAt(i-1)) && Character.isDigit(str.charAt(i+1)))check2++;
             }
         }
 
